@@ -109,7 +109,7 @@ func (v *packet) addAttribute(a attribute) {
 }
 
 func (v *packet) serialize() []byte {
-	packetBytes := make([]byte, 20)
+	packetBytes := make([]byte, 4)
 	binary.BigEndian.PutUint16(packetBytes[0:2], v.types)
 	binary.BigEndian.PutUint16(packetBytes[2:4], v.length)
 	packetBytes = append(packetBytes, v.transID...)
